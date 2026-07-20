@@ -29,7 +29,6 @@ public class GameSettingsUI : MonoBehaviour
     public void SetVolume(System.Single volume)
     {
         GameSettings.Instance.volume = volume;
-        SetSoundOn(true);
     }
 
     public void ToggleSound()

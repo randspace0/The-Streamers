@@ -9,8 +9,6 @@ public class PipeCross : MonoBehaviour, IPipe
     Tilemap tilemap;
     SpriteRenderer sr;
     [SerializeField]
-    Sprite[] sprites;
-    [SerializeField]
     bool isHot = false;
     [SerializeField]
     Material materialHotWater;
@@ -36,6 +34,7 @@ public class PipeCross : MonoBehaviour, IPipe
         return GetComponent<Transform>().position;
     }
 
+    // ponytail: cross junction connects all 4 directions regardless of orientation -- rotation would be a no-op, unlike PipeL/PipeT/PipeStraight
     void SetupPathingAndSprite()
     {
         var currentPos = tilemap.WorldToCell(transform.position);
@@ -55,33 +54,7 @@ public class PipeCross : MonoBehaviour, IPipe
         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos2));
         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos3));
         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos4));
-
-        // switch (state)
-        // {
-        //     case 0:
-        //         tilePos.y += 1;
-        //         tilePos2.x += 1;
-        //         tilePos3.y -= 1;
-        //         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos));
-        //         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos2));
-        //         piping.path.Add(new KeyValuePair<Vector3Int, Vector3Int>(currentPos, tilePos3));
-        //         break;
-        // }
-        // sr.sprite = sprites[state];
     }
-
-    // void OnMouseDown()
-    // {
-    //     ChangeState();
-    //     SetupPathingAndSprite();
-
-    //     piping.OnPipeChange();
-    // }
-
-    // void ChangeState()
-    // {
-    //     state = (byte)((state + 1) % sprites.Length);
-    // }
 
     public void SetHotWaterPipe(bool isHot)
     {
