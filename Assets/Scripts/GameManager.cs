@@ -66,9 +66,8 @@ public class GameManager : MonoBehaviour
 
         bool won = MeanScore() >= winMoodThreshold;
         textResultScoreObj.SetActive(true);
-        textResultScoreObj.GetComponent<Text>().text = won
-            ? string.Format("You Win!\nFinal Score: {0:0.0}%", MeanScore())
-            : string.Format("Game Over\nFinal Score: {0:0.0}%", MeanScore());
+        textResultScoreObj.GetComponent<Text>().text = Mgl.I18n.Instance.__(
+            won ? "Game-Win" : "Game-Lose", MeanScore().ToString("0.0"));
     }
 
     float MeanScore()

@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class LanguageSelectorUI : MonoBehaviour
 {
-    Mgl.I18n i18n = Mgl.I18n.Instance;
     static string[] locales = new string[] { "en-US", "id-ID" };
-    static byte localeIdx = 0;
     [SerializeField]
     Sprite[] flags;
 
@@ -32,9 +29,14 @@ public class LanguageSelectorUI : MonoBehaviour
 
     public void ToggleLanguage()
     {
-        localeIdx = (byte)((localeIdx + 1) % locales.Length);
-        Mgl.I18n.SetLocale(locales[localeIdx]);
-        
-        SceneManager.LoadScene("MainMenuScene"); // Reload the scene to reload the language
+        var currentIdx = System.Array.IndexOf(locales, Mgl.I18n.GetLocale());
+        var nextIdx = (currentIdx + 1) % locales.Length;
+        Mgl.I18n.SetLocale(locales[nextIdx]);
+
+        UpdateButton();
+        foreach (var text in FindObjectsOfType<TextI18n>())
+        {
+            text.Refresh();
+        }
     }
 }
