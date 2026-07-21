@@ -34,7 +34,8 @@ public class LanguageSelectorUI : MonoBehaviour
         Mgl.I18n.SetLocale(locales[nextIdx]);
 
         UpdateButton();
-        foreach (var text in FindObjectsOfType<TextI18n>())
+        // ponytail: FindObjectsOfTypeAll also catches TextI18n on inactive panels (e.g. Settings), which FindObjectsOfType would skip
+        foreach (var text in Resources.FindObjectsOfTypeAll<TextI18n>())
         {
             text.Refresh();
         }
