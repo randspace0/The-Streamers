@@ -11,6 +11,11 @@ public class TextI18n : MonoBehaviour
 
     void Start()
     {
+        Refresh();
+    }
+
+    public void Refresh()
+    {
         GetComponent<Text>().text = i18n.__(keyI18n);
     }
 }

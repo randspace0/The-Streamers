@@ -9,7 +9,7 @@ public class LevelSelectorUI : MonoBehaviour
     {
         // Should we do it async?
         // TODO
-        SceneManager.LoadScene("", LoadSceneMode.Single);
+        SceneManager.LoadScene($"Level{level}", LoadSceneMode.Single);
     }
 
     public void OnClickBackToMainMenu()

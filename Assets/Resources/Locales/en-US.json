@@ -11,6 +11,8 @@
 "MainMenu-Language": "Language",
 "MainMenu-Back": "Back",
 "Game-Score:": "Score:",
+"Game-Win": "You Win!\nFinal Score: {0}%",
+"Game-Lose": "Game Over\nFinal Score: {0}%",
 "MainMenu-LanguageEnglish": "English",
 "MainMenu-LanguageIndonesia": "Bahasa Indonesia",
 "MainMenu-About": "This game is developed by JanganLupaCuciTangan team for Arkav Game Jam 2021.",

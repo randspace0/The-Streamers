@@ -11,6 +11,8 @@
 "MainMenu-Language": "Bahasa",
 "MainMenu-Back": "Kembali",
 "Game-Score:": "Skor:",
+"Game-Win": "Anda Menang!\nSkor Akhir: {0}%",
+"Game-Lose": "Permainan Berakhir\nSkor Akhir: {0}%",
 "MainMenu-LanguageEnglish": "English",
 "MainMenu-LanguageIndonesia": "Bahasa Indonesia",
 "MainMenu-About": "Game ini dibuat oleh tim JanganLupaCuciTangan untuk Arkav Game Jam 2021.",

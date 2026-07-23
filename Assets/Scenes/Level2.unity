@@ -5094,7 +5094,17 @@ PrefabInstance:
     - target: {fileID: 4331962358417263050, guid: c14ac20a17398f543b3434c3f86b5366,
         type: 3}
       propertyPath: thingsAboveGroundObj
-      value: 
+      value:
       objectReference: {fileID: 44382979}
+    - target: {fileID: 4331962358417263050, guid: c14ac20a17398f543b3434c3f86b5366,
+        type: 3}
+      propertyPath: levelDurationSeconds
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4331962358417263050, guid: c14ac20a17398f543b3434c3f86b5366,
+        type: 3}
+      propertyPath: winMoodThreshold
+      value: 55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c14ac20a17398f543b3434c3f86b5366, type: 3}
