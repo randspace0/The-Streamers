@@ -1,0 +1,19 @@
+config_version=5
+
+[application]
+
+config/name="The Streamers"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.3")
+
+[autoload]
+
+Settings="*res://scripts/settings.gd"
+I18n="*res://scripts/i18n.gd"
+Sfx="*res://scripts/sfx.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
